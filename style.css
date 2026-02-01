@@ -1,18 +1,86 @@
-:root { --y-blue: #00205B; --y-red: #E60012; --silver: #D1D1D1; }
-body { font-family: 'Segoe UI', sans-serif; background: #f4f7f6; margin: 0; }
-nav { background: var(--y-blue); color: white; padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--silver); }
+/* --- YAMAHA BRAND COLORS --- */
+:root { 
+    --y-blue: #00205B; 
+    --y-red: #E60012; 
+    --silver: #D1D1D1; 
+    --white: #FFFFFF;
+    --bg: #f4f7f6;
+}
+
+/* --- BASIC RESET --- */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: var(--bg); 
+    margin: 0; 
+    color: #333;
+}
+
+/* --- NAVIGATION BAR --- */
+nav { 
+    background: var(--y-blue); 
+    color: white; 
+    padding: 10px 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 3px solid var(--silver);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 .logo-area { display: flex; align-items: center; gap: 10px; }
-.brand-name { font-weight: bold; font-size: 1.2rem; }
-.container { padding: 20px; max-width: 1000px; margin: auto; }
-.card, section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
-.hidden { display: none; }
-input, select { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-.btn-primary { background: var(--y-blue); color: white; border: none; padding: 12px; cursor: pointer; font-weight: bold; border-radius: 4px; }
-.btn-export { background: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
-.btn-delete { background: var(--y-red); color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; }
-.header-flex { display: flex; justify-content: space-between; align-items: center; }
-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-th { background: #eee; color: var(--y-blue); }
-#nav-links button { background: transparent; border: 1px solid white; color: white; margin-left: 5px; cursor: pointer; padding: 5px 10px; border-radius: 3px; }
-#logout-btn { background: var(--y-red); color: white; border: none; padding: 6px 12px; cursor: pointer; margin-left: 10px; border-radius: 4px; }
+.brand-name { font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; }
+
+/* --- CONTAINERS & CARDS --- */
+.container { padding: 20px; max-width: 1200px; margin: auto; }
+.card, section { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+    margin-bottom: 25px; 
+}
+
+.hidden { display: none !important; }
+
+/* --- FORMS & INPUTS --- */
+input, select { 
+    width: 100%; 
+    padding: 12px; 
+    margin: 8px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    box-sizing: border-box; 
+    font-size: 1rem;
+}
+
+label { font-weight: bold; color: var(--y-blue); margin-top: 10px; display: block; }
+
+/* --- BUTTONS --- */
+.btn-primary { 
+    background: var(--y-blue); 
+    color: white; 
+    border: none; 
+    padding: 14px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    border-radius: 6px; 
+    width: 100%;
+    transition: 0.3s;
+}
+.btn-primary:hover { background: #003399; }
+
+.btn-export { 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 10px 18px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-export:hover { background: #218
