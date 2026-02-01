@@ -27,24 +27,44 @@
 
         <section id="admin-dashboard" class="hidden">
             <div class="header-flex">
-                <h2>Admin Dashboard</h2>
+                <h2>Admin Analytics Dashboard</h2>
                 <button onclick="exportToExcel()" class="btn-export">📥 Export to Excel</button>
             </div>
-            <div class="chart-container">
-                <canvas id="monthlyChart"></canvas>
+
+            <div class="charts-grid">
+                <div class="chart-box">
+                    <h4>Scrap Trend (Per Month)</h4>
+                    <canvas id="monthlyTrendChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h4>Total Quantity per Scrap Type</h4>
+                    <canvas id="scrapQtyChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h4>Scrap Ranking (Most to Least)</h4>
+                    <canvas id="rankChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h4>User Performance (Contribution)</h4>
+                    <canvas id="userPerformanceChart"></canvas>
+                </div>
             </div>
+
             <h3>Recent Global Records</h3>
-            <table id="admin-table">
-                <thead>
-                    <tr><th>Date</th><th>User</th><th>Type</th><th>Qty</th></tr>
-                </thead>
-                <tbody id="admin-all-records"></tbody>
-            </table>
+            <div class="table-container">
+                <table id="admin-table">
+                    <thead>
+                        <tr><th>Date</th><th>User Source</th><th>Scrap Type</th><th>Qty</th></tr>
+                    </thead>
+                    <tbody id="admin-all-records"></tbody>
+                </table>
+            </div>
         </section>
 
         <section id="admin-users" class="hidden">
             <h2>User Management</h2>
-            <div class="add-user-box">
+            <div class="add-user-box card">
+                <h3>Add New User</h3>
                 <input type="text" id="new-name" placeholder="Full Name">
                 <input type="text" id="new-username" placeholder="Username">
                 <select id="new-role">
@@ -64,10 +84,14 @@
 
         <section id="user-add-scrap" class="hidden">
             <h2>Add Scrap Record</h2>
-            <form id="scrap-form">
+            <form id="scrap-form" class="card">
+                <label for="date">Date of Record:</label>
                 <input type="date" id="date" required>
-                <input type="text" id="personnel" placeholder="Assign Personnel" required>
-                <input type="number" id="qty" placeholder="Bilang ng Scrap" required>
+                
+                <input type="text" id="personnel" placeholder="Assign Personnel Name" required>
+                <input type="number" id="qty" placeholder="Quantity (Bilang ng Scrap)" required>
+                
+                <label for="scrap-type">Select Scrap Category:</label>
                 <select id="scrap-type">
                     <option value="Garbage">Garbage</option>
                     <option value="Carton">Carton</option>
@@ -79,13 +103,15 @@
         </section>
 
         <section id="user-view-scrap" class="hidden">
-            <h2>My Scrap Records</h2>
-            <table id="records-table">
-                <thead>
-                    <tr><th>Date</th><th>Personnel</th><th>Type</th><th>Qty</th><th>Actions</th></tr>
-                </thead>
-                <tbody id="scrap-list"></tbody>
-            </table>
+            <h2>My Recorded Scrap</h2>
+            <div class="table-container">
+                <table id="records-table">
+                    <thead>
+                        <tr><th>Date</th><th>Personnel</th><th>Type</th><th>Qty</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="scrap-list"></tbody>
+                </table>
+            </div>
         </section>
     </div>
 
